@@ -3,15 +3,16 @@ const dotenv = require('dotenv');
 
 dotenv.config({ path: "./../../.env"  });
 
-modules.export=() =>{
+module.exports=() =>{
     mongoose
-  .connect("mongodb://localhost:27017/db1", {
+  .connect("mongodb://localhost:27017/shopify", {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
     useFindAndModify: false
   })
-  .then(() => console.log('DB connection successful!'));
+  .then(console.log('DB connection successful!'))
+  .catch()
 
 }
 
