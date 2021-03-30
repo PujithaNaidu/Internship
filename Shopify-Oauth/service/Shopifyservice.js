@@ -8,7 +8,7 @@ const apiKey = process.env.SHOPIFY_API_KEY;
 const apiSecret = process.env.SHOPIFY_API_SECRET;
 
 const scopes = 'read_products, write_products';
-const forwardingAddress = "https://bf5f21e6f99b.ngrok.io"; // Replace this with your HTTPS Forwarding address
+const forwardingAddress = "https://b9003b82fb7d.ngrok.io"; // Replace this with your HTTPS Forwarding address
 
 exports.buildInstallURL = (shop) => {
     const state = nonce();

@@ -6,7 +6,7 @@ const shopifySchema = new Schema(
         shopName : {
             type : String,
             required : true,
-            unique:true
+            unique: true
         },
         accessToken : {
             type : String,

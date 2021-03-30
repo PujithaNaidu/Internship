@@ -148,17 +148,19 @@ shopifyRouter.route('/orders')
     console.log("got into orders")
 	console.log(req.body)
     try {
+		console.log("entered into try !")
         const url = 'https://74dffbe019dd03437bda9608f9938ce8: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@closestone.myshopify.com/admin/api/2021-01/orders.json';
+		console.log("entered into url!")
         const options = {
             method : 'POST',
 			headers: {
 				'content-type' : 'application/json',
 			},
             url : url,
-            data : { order : req.body.order }
+            data : { order : req.body.order}
         }
 		const resp = await axios(options)
-        console.log("order posted")
+        console.log("your order is posted")
         res.send(resp.data)
     } catch (error) {
         console.log(error.message)

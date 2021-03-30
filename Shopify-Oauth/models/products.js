@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema(
     {
-        productId : {
+        _id : {
             type : String
         }, 
         product : {
@@ -32,7 +32,7 @@ const productSchema = new Schema(
     },
     {
         timestamps : true,
-        id:false
+        id: false
     }
 )
 
