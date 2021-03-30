@@ -1,9 +1,22 @@
 const mongoose = require('mongoose');
-const schema=new mongoose.Schema({
-        storeName: String,
-        accessToken: String,
-        products: []
-});
-const store=mongoose.model('store',schema);
+const Schema = mongoose.Schema;
 
-module.exports=store;
+const shopifySchema = new Schema(
+    {
+        shopName : {
+            type : String,
+            required : true,
+            unique:true
+        },
+        accessToken : {
+            type : String,
+            required : true
+        },
+    },
+    {
+        timestamps : true
+    }
+)
+
+let ShopifyUser = mongoose.model('shop', shopifySchema);
+module.exports = ShopifyUser;

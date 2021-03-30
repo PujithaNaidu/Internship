@@ -5,10 +5,24 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
+var shopifyRouter = require('./routes/shopify.js');
 
+const mongoose = require('mongoose');
 
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
 
+// conFusion is the database
+const url = 'mongodb://127.0.0.1:27017/shopifyProductsdb';
+var connect = mongoose.connect(url);
+connect.then((db) => {
+  console.log('Connected to the server correctly');
+})
+.catch((err) => {
+  console.log(err);
+})
 var app = express();
 
 // view engine setup
@@ -18,16 +32,16 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-// app.use('/shopify', shopify);
+app.use('/shopify', shopifyRouter);
 
 // catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   next(createError(404));
-// });
+app.use(function(req, res, next) {
+  next(createError(404));
+});
 
 // error handler
 app.use(function(err, req, res, next) {
