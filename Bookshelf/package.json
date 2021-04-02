@@ -1,0 +1,30 @@
+{
+  "name": "bookshelf",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http": "^0.0.1-security",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "knex": "^0.95.4",
+    "morgan": "~1.9.1"
+  },
+  "description": "bookshelf",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PujithaNaidu/Internship.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PujithaNaidu/Internship/issues"
+  },
+  "homepage": "https://github.com/PujithaNaidu/Internship#readme"
+}
