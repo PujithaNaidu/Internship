@@ -14,7 +14,7 @@ class Movie(db.Document):
              'genre':self.genre
         }
     
-    def add_movies():
-        body = request.get_json()
-        movie = Movie(**body).save()
-        return jsonify(movie), 201
+    # def add_movies(_title_,_year_,_genre_):
+    #     body = request.get_json()
+    #     movie = Movie(body.title:_title_,body.year:_year_,body.genre:_genre_).save()
+    #     return jsonify(movie), 201
