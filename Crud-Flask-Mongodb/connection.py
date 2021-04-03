@@ -6,3 +6,4 @@ app.config['MONGODB_SETTINGS'] = {
     'host':'mongodb://localhost/moviedb',
     'port':27017
 }
+
