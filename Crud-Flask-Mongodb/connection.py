@@ -7,3 +7,17 @@ app.config['MONGODB_SETTINGS'] = {
     'port':27017
 }
 
+
+db = MongoEngine(app)
+
+class Movie(db.Document):
+    title=db.StringField(required=True)
+    year=db.IntField()
+    genre=db.StringField()
+
+    def json(self):
+        return {
+             'title':self.title,   
+             'year':self.year,
+             'genre':self.genre
+        }
